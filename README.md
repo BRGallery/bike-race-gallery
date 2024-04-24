@@ -1,1 +1,1 @@
-# bike-race-gallery
+# BikeRaceGallery
