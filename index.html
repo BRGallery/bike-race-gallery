@@ -1,479 +1,521 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Sidebar Dashboard Template With Sub Menu</title>
-        <link rel="stylesheet" href="style.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
-		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-			  // Function to close all open submenus
-			  function closeAllSubmenus() {
-				$('.sub-menu').removeClass('open');
-			  }
+  <head>
+    <meta charset="utf-8" />
+    <title>Sidebar Dashboard Template With Sub Menu</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        // Function to close all open submenus
+        function closeAllSubmenus() {
+          $(".sub-menu").removeClass("open");
+        }
 
-			  // Toggle submenu on menu button click
-			  $(".menu-btn").click(function() {
-				$(this).next(".sub-menu").toggleClass("open");
-			  });
+        // Toggle submenu on menu button click
+        $(".menu-btn").click(function () {
+          $(this).next(".sub-menu").toggleClass("open");
+        });
 
-			  // Close submenus when clicking outside
-			  $(document).click(function(event) {
-				if (!$(event.target).closest('.menu-btn, .sub-menu').length) {
-				  closeAllSubmenus();
-				}
-			  });
-			});
-        </script>
-    </head>
-    <body>
-
-        <!--wrapper start-->
-        <div class="wrapper">
-            <!--header menu start-->
-            <div class="header">
-                <div class="header-menu">
-                    <div class="title">Bike Race Gallery</div>
-                    <ul>
-                        <li><a href="#"><i class="fas fa-search"></i></a></li>
-                        <li><a href="#"><i class="fas fa-bell"></i></a></li>
-                        <li><a href="#"><i class="fas fa-power-off"></i></a></li>
-                    </ul>
-                </div>
+        // Close submenus when clicking outside
+        $(document).click(function (event) {
+          if (!$(event.target).closest(".menu-btn, .sub-menu").length) {
+            closeAllSubmenus();
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!--wrapper start-->
+    <div class="bg-violet-900 text-amber-500">
+      <!--header menu start-->
+      <div class="flex w-full h-18 items-center  justify-between bg-violet-950 text-amber-500">
+        <div class="w-auto flex-none text-4xl font-semibold">Bike Race Gallery</div>
+        <ul class="flex w-40 flex-none justify-around text-2xl">
+          <li>
+            <button
+              class="text-md h-9 w-9 rounded-full border border-transparent bg-white text-center text-amber-500 hover:bg-gray-300"
+              type="button"
+            >
+              <i class="fas fa-search"></i>
+            </button>
+          </li>
+          <li>
+            <button
+              class="text-md h-9 w-9 rounded-full border border-transparent bg-white text-center text-amber-500 hover:bg-gray-300"
+              type="button"
+            >
+              <i class="fas fa-bell"></i>
+            </button>
+          </li>
+          <li>
+            <button
+              class="text-md h-9 w-9 rounded-full border border-transparent bg-white text-center text-amber-500 hover:bg-gray-300"
+              type="button"
+            >
+              <i class="fas fa-power-off"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <!--header menu end-->
+      <!--sidebar start-->
+      <div class="sidebar">
+        <div class="sidebar-menu">
+          <li class="item">
+            <a href="#" class="menu-btn">
+              <i class="fas fa-home"></i><span>Home</span>
+            </a>
+          </li>
+          <li class="item" id="profile">
+            <a href="#profile" class="menu-btn">
+              <i class="fas fa-image"></i
+              ><span
+                >Gallery <i class="fas fa-chevron-down drop-down"></i
+              ></span>
+            </a>
+            <div class="sub-menu">
+              <a href="#Licenses"
+                ><i class="fas fa-image"></i><span>Licenses</span></a
+              >
+              <a href="#Certificates"
+                ><i class="fas fa-address-card"></i><span>Certificates</span></a
+              >
+              <a href="#Challenges"
+                ><i class="fas fa-address-card"></i
+                ><span>Challenges (Coming Soon)</span></a
+              >
             </div>
-            <!--header menu end-->
-            <!--sidebar start-->
-            <div class="sidebar">
-                <div class="sidebar-menu">
-                    <li class="item">
-                        <a href="#" class="menu-btn">
-                            <i class="fas fa-home"></i></i><span>Home</span>
-                        </a>
-                    </li>
-                    <li class="item" id="profile">
-                        <a href="#profile" class="menu-btn">
-                            <i class="fas fa-image"></i><span>Gallery <i class="fas fa-chevron-down drop-down"></i></span>
-                        </a>
-                        <div class="sub-menu">
-                            <a href="#Licenses"><i class="fas fa-image"></i><span>Licenses</span></a>
-                            <a href="#Certificates"><i class="fas fa-address-card"></i><span>Certificates</span></a>
-							<a href="#Challenges"><i class="fas fa-address-card"></i><span>Challenges (Coming Soon)</span></a>
-                        </div>
-                    </li>
-                    <li class="item" id="">
-                        <a href="#messages" class="menu-btn">
-                            <i class="fas fa-envelope"></i><span>Messages <i class="fas fa-chevron-down drop-down"></i></span>
-                        </a>
-                        <div class="sub-menu">
-                            <a href="#"><i class="fas fa-envelope"></i><span>New</span></a>
-                            <a href="#"><i class="fas fa-envelope-square"></i><span>Sent</span></a>
-                            <a href="#"><i class="fas fa-exclamation-circle"></i><span>Spam</span></a>
-                        </div>
-                    </li>
-                    <li class="item" id="settings">
-                        <a href="#settings" class="menu-btn">
-                            <i class="fas fa-cog"></i><span>Settings <i class="fas fa-chevron-down drop-down"></i></span>
-                        </a>
-                        <div class="sub-menu">
-                            <a href="#"><i class="fas fa-lock"></i><span>Password</span></a>
-                            <a href="#"><i class="fas fa-language"></i><span>Language</span></a>
-                        </div>
-                    </li>
-                    <li class="item">
-                        <a href="#" class="menu-btn">
-                            <i class="fas fa-info-circle"></i><span>About</span>
-                        </a>
-                    </li>
-                </div>
+          </li>
+          <li class="item" id="">
+            <a href="#messages" class="menu-btn">
+              <i class="fas fa-envelope"></i
+              ><span
+                >Messages <i class="fas fa-chevron-down drop-down"></i
+              ></span>
+            </a>
+            <div class="sub-menu">
+              <a href="#"><i class="fas fa-envelope"></i><span>New</span></a>
+              <a href="#"
+                ><i class="fas fa-envelope-square"></i><span>Sent</span></a
+              >
+              <a href="#"
+                ><i class="fas fa-exclamation-circle"></i><span>Spam</span></a
+              >
             </div>
-            <!--sidebar end-->
-            <!--main container start-->
-            <div class="main-container">
-				<h1 class="main-header">Licenses</h1>
-				<div class="button-section">
-				  <ul>
-					<button class="bike-button">Normal</button>
-					<button class="bike-button">Acrobat</button>
-					<button class="bike-button">Ghost</button>
-					<button class="bike-button">Hog</button>
-					<button class="bike-button">Ultra</button>
-				  </ul>
-				  <ul>
-					<button class="bike-button">Agile Soul</button>
-					<button class="bike-button">Acrobat Hog</button>
-					<button class="bike-button">AWD</button>
-					<button class="bike-button">Thunder Phantom</button>
-					<button class="bike-button">Maniac</button>
-				  </ul>
-				</div>
-				<div class="main-content">
-					<div class="card">
-						<h2 class="card-header">PRO</h2>
-						<div class="card-body1">
-							<h3 class="card-body-header">Pro 1</h3>
-							<table class="card-body-table">
-								<tr>
-									<th>Level</th>
-									<th>Sub</th>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-							</table>
-						</div>
-						<div class="card-body2">
-							<h3 class="card-body-header">Pro 2</h3>
-							<table class="card-body-table">
-								<tr>
-									<th>Level</th>
-									<th>Sub</th>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-							</table>
-						</div>
-						<div class="card-body3">
-							<h3 class="card-body-header">Pro 3</h3>
-							<table class="card-body-table">
-								<tr>
-									<th>Level</th>
-									<th>Sub</th>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-							</table>
-						</div>
-					</div>
-					<div class="card">
-						<h2 class="card-header">ELITE</h2>
-						<div class="card-body1">
-							<h3 class="card-body-header">Elite 1</h3>
-							<table class="card-body-table">
-								<tr>
-									<th>Level</th>
-									<th>Sub</th>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-							</table>
-						</div>
-						<div class="card-body2">
-							<h3 class="card-body-header">Elite 2</h3>
-							<table class="card-body-table">
-								<tr>
-									<th>Level</th>
-									<th>Sub</th>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-							</table>
-						</div>
-						<div class="card-body3">
-							<h3 class="card-body-header">Elite 3</h3>
-							<table class="card-body-table">
-								<tr>
-									<th>Level</th>
-									<th>Sub</th>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-							</table>
-						</div>
-					</div>
-					<div class="card">
-						<h2 class="card-header">MASTER</h2>
-						<div class="card-body1">
-							<h3 class="card-body-header">Master 1</h3>
-							<table class="card-body-table">
-								<tr>
-									<th>Level</th>
-									<th>Sub</th>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-							</table>
-						</div>
-						<div class="card-body2">
-							<h3 class="card-body-header">Master 2</h3>
-							<table class="card-body-table">
-								<tr>
-									<th>Level</th>
-									<th>Sub</th>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-							</table>
-						</div>
-						<div class="card-body3">
-							<h3 class="card-body-header">Master 3</h3>
-							<table class="card-body-table">
-								<tr>
-									<th>Level</th>
-									<th>Sub</th>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-							</table>
-						</div>
-					</div>
-					<div class="card">
-						<h2 class="card-header">GRANDMASTER</h2>
-						<div class="card-body1">
-							<h3 class="card-body-header">Grandmaster 1</h3>
-							<table class="card-body-table">
-								<tr>
-									<th>Level</th>
-									<th>Sub</th>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-							</table>
-						</div>
-						<div class="card-body2">
-							<h3 class="card-body-header">Grandmaster 2</h3>
-							<table class="card-body-table">
-								<tr>
-									<th>Level</th>
-									<th>Sub</th>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-							</table>
-						</div>
-						<div class="card-body3">
-							<h3 class="card-body-header">Grandmaster 3</h3>
-							<table class="card-body-table">
-								<tr>
-									<th>Level</th>
-									<th>Sub</th>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-								<tr>
-									<td>~~~</td>
-									<td>0.000</td>
-								</tr>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-            <!--main container end-->
+          </li>
+          <li class="item" id="settings">
+            <a href="#settings" class="menu-btn">
+              <i class="fas fa-cog"></i
+              ><span
+                >Settings <i class="fas fa-chevron-down drop-down"></i
+              ></span>
+            </a>
+            <div class="sub-menu">
+              <a href="#"><i class="fas fa-lock"></i><span>Password</span></a>
+              <a href="#"
+                ><i class="fas fa-language"></i><span>Language</span></a
+              >
+            </div>
+          </li>
+          <li class="item">
+            <a href="#" class="menu-btn">
+              <i class="fas fa-info-circle"></i><span>About</span>
+            </a>
+          </li>
         </div>
-        <!--wrapper end-->
-
-    </body>
+      </div>
+      <!--sidebar end-->
+      <!--main container start-->
+      <div class="main-container">
+        <h1 class="main-header">Licenses</h1>
+        <div class="button-section">
+          <ul>
+            <button class="bike-button">Normal</button>
+            <button class="bike-button">Acrobat</button>
+            <button class="bike-button">Ghost</button>
+            <button class="bike-button">Hog</button>
+            <button class="bike-button">Ultra</button>
+          </ul>
+          <ul>
+            <button class="bike-button">Agile Soul</button>
+            <button class="bike-button">Acrobat Hog</button>
+            <button class="bike-button">AWD</button>
+            <button class="bike-button">Thunder Phantom</button>
+            <button class="bike-button">Maniac</button>
+          </ul>
+        </div>
+        <div class="main-content">
+          <div class="card">
+            <h2 class="card-header">PRO</h2>
+            <div class="card-body1">
+              <h3 class="card-body-header">Pro 1</h3>
+              <table class="card-body-table">
+                <tr>
+                  <th>Level</th>
+                  <th>Sub</th>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+              </table>
+            </div>
+            <div class="card-body2">
+              <h3 class="card-body-header">Pro 2</h3>
+              <table class="card-body-table">
+                <tr>
+                  <th>Level</th>
+                  <th>Sub</th>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+              </table>
+            </div>
+            <div class="card-body3">
+              <h3 class="card-body-header">Pro 3</h3>
+              <table class="card-body-table">
+                <tr>
+                  <th>Level</th>
+                  <th>Sub</th>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="card">
+            <h2 class="card-header">ELITE</h2>
+            <div class="card-body1">
+              <h3 class="card-body-header">Elite 1</h3>
+              <table class="card-body-table">
+                <tr>
+                  <th>Level</th>
+                  <th>Sub</th>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+              </table>
+            </div>
+            <div class="card-body2">
+              <h3 class="card-body-header">Elite 2</h3>
+              <table class="card-body-table">
+                <tr>
+                  <th>Level</th>
+                  <th>Sub</th>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+              </table>
+            </div>
+            <div class="card-body3">
+              <h3 class="card-body-header">Elite 3</h3>
+              <table class="card-body-table">
+                <tr>
+                  <th>Level</th>
+                  <th>Sub</th>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="card">
+            <h2 class="card-header">MASTER</h2>
+            <div class="card-body1">
+              <h3 class="card-body-header">Master 1</h3>
+              <table class="card-body-table">
+                <tr>
+                  <th>Level</th>
+                  <th>Sub</th>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+              </table>
+            </div>
+            <div class="card-body2">
+              <h3 class="card-body-header">Master 2</h3>
+              <table class="card-body-table">
+                <tr>
+                  <th>Level</th>
+                  <th>Sub</th>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+              </table>
+            </div>
+            <div class="card-body3">
+              <h3 class="card-body-header">Master 3</h3>
+              <table class="card-body-table">
+                <tr>
+                  <th>Level</th>
+                  <th>Sub</th>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="card">
+            <h2 class="card-header">GRANDMASTER</h2>
+            <div class="card-body1">
+              <h3 class="card-body-header">Grandmaster 1</h3>
+              <table class="card-body-table">
+                <tr>
+                  <th>Level</th>
+                  <th>Sub</th>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+              </table>
+            </div>
+            <div class="card-body2">
+              <h3 class="card-body-header">Grandmaster 2</h3>
+              <table class="card-body-table">
+                <tr>
+                  <th>Level</th>
+                  <th>Sub</th>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+              </table>
+            </div>
+            <div class="card-body3">
+              <h3 class="card-body-header">Grandmaster 3</h3>
+              <table class="card-body-table">
+                <tr>
+                  <th>Level</th>
+                  <th>Sub</th>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+                <tr>
+                  <td>~~~</td>
+                  <td>0.000</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--main container end-->
+    </div>
+    <!--wrapper end-->
+  </body>
 </html>
-      
