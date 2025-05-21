@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Dropdown Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for max-height transition, as Tailwind's max-h-0 and max-h-full don't allow dynamic scrollHeight */
+        .dropdown-content {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.4s ease-out;
+        }
+    </style>
+</head>
+<body class="font-inter m-0 p-0 bg-gray-100 flex min-h-screen overflow-x-hidden">
+    <aside class="sidebar w-64 bg-gray-800 text-gray-200 p-5 shadow-lg transition-all duration-300 ease-in-out flex-shrink-0 rounded-r-lg">
+        <h2 class="text-blue-400 mt-0 mb-8 text-center font-semibold text-2xl">My App</h2>
+        <nav>
+            <ul>
+                <li class="mb-2">
+                    <a href="#" class="block p-3 text-gray-200 no-underline rounded-lg transition-colors duration-300 ease-in-out hover:bg-gray-700 hover:text-white font-medium">Dashboard</a>
+                </li>
+                <li class="mb-2">
+                    <a href="#" class="block p-3 text-gray-200 no-underline rounded-lg transition-colors duration-300 ease-in-out hover:bg-gray-700 hover:text-white font-medium">Profile</a>
+                </li>
+                <li class="">
+                    <button class="dropdown-toggle" aria-expanded="false">
+                        Products
+                        <span class="arrow"></span>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#" class="block">Category A</a>
+                        <a href="#" class="block">Category B</a>
+                        <a href="#" class="block">Category C</a>
+                    </div>
+                </li>
+                <li class="mb-2">
+                    <a href="#" class="block p-3 text-gray-200 no-underline rounded-lg transition-colors duration-300 ease-in-out hover:bg-gray-700 hover:text-white font-medium">Settings</a>
+                </li>
+                <li class="mb-2">
+                    <a href="#" class="block p-3 text-gray-200 no-underline rounded-lg transition-colors duration-300 ease-in-out hover:bg-gray-700 hover:text-white font-medium">Help</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            const dropdownContent = document.querySelector('.dropdown-content');
+
+            // Add click event listener to the dropdown toggle button
+            dropdownToggle.addEventListener('click', function() {
+                // Toggle the 'active' class on the button for arrow rotation
+                this.classList.toggle('active');
+
+                // Check if the dropdown content is currently visible (max-height is not 0)
+                if (dropdownContent.style.maxHeight) {
+                    // If visible, hide it by setting max-height to 0
+                    dropdownContent.style.maxHeight = null; // Reset to allow CSS to take over
+                    this.setAttribute('aria-expanded', 'false'); // Update ARIA attribute
+                } else {
+                    // If hidden, show it by setting max-height to its scrollHeight
+                    // scrollHeight gives the full height of the content, even if it's not currently visible
+                    dropdownContent.style.maxHeight = dropdownContent.scrollHeight + 'px';
+                    this.setAttribute('aria-expanded', 'true'); // Update ARIA attribute
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -9,33 +9,21 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        // Function to close all open submenus
-        function closeAllSubmenus() {
-          $(".sub-menu").removeClass("open");
-        }
+    <style>
+      /* Custom styles for max-height transition, as Tailwind's max-h-0 and max-h-full don't allow dynamic scrollHeight */
+      .dropdown-content {
+          overflow: hidden;
+          max-height: 0;
+          transition: max-height 0.4s ease-out;
+      }
+  </style>
 
-        // Toggle submenu on menu button click
-        $(".menu-btn").click(function () {
-          $(this).next(".sub-menu").toggleClass("open");
-        });
-
-        // Close submenus when clicking outside
-        $(document).click(function (event) {
-          if (!$(event.target).closest(".menu-btn, .sub-menu").length) {
-            closeAllSubmenus();
-          }
-        });
-      });
-    </script>
   </head>
   <body>
     <!--wrapper start-->
-    <div class="bg-violet-900 text-amber-500">
+    <div class="bg-violet-200 text-amber-500">
       <!--header menu start-->
-      <div class="flex w-full h-18 items-center  justify-between bg-violet-950 text-amber-500">
+      <div class="flex w-full h-18 items-center  justify-between bg-[#372a57] text-amber-500">
         <div class="w-auto flex-none text-4xl font-semibold">Bike Race Gallery</div>
         <ul class="flex w-40 flex-none justify-around text-2xl">
           <li>
@@ -65,34 +53,42 @@
         </ul>
       </div>
       <!--header menu end-->
-      <!--sidebar start-->
-      <div class="sidebar">
-        <div class="sidebar-menu">
-          <li class="item">
+      <!-- sidebar start-->
+      <div class="z-10 bg-[#372a57eb] fixed top-[70px] w-[250px] h-screen transition-all duration-300 overflow-y-auto">
+        <div class="">
+          <li class="">
             <a href="#" class="menu-btn">
               <i class="fas fa-home"></i><span>Home</span>
             </a>
           </li>
-          <li class="item" id="profile">
-            <a href="#profile" class="menu-btn">
-              <i class="fas fa-image"></i
-              ><span
-                >Gallery <i class="fas fa-chevron-down drop-down"></i
-              ></span>
+          <li class="list-item" id="profile">
+            <button type="button" class="flex items-center" aria-controls="gallery-dropdown" aria-hidden="gallery-dropdown">
+              <i class="fas fa-image"></i>
+              <span>Gallery</span>
+              <i class="fas fa-chevron-down drop-down"></i>
             </a>
-            <div class="sub-menu">
+            <ul id="gallery-dropdown" class="hidden">
               <a href="#Licenses"
-                ><i class="fas fa-image"></i><span>Licenses</span></a
-              >
+                ><i class="fas fa-image"></i><span>Licenses</span></a>
               <a href="#Certificates"
-                ><i class="fas fa-address-card"></i><span>Certificates</span></a
-              >
-              <a href="#Challenges"
-                ><i class="fas fa-address-card"></i
-                ><span>Challenges (Coming Soon)</span></a
-              >
+                ><i class="fas fa-address-card"></i><span>Certificates</span></a>
+              <a href="#Challenges"><i class="fas fa-address-card"></i><span>Challenges (Coming Soon)</span></a>
+                </ul>
+          </li>
+          
+          
+          <li class="">
+            <button class="dropdown-toggle" aria-expanded="false">
+                Products
+                <span class="arrow"></span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#" class="block">Category A</a>
+                <a href="#" class="block">Category B</a>
+                <a href="#" class="block">Category C</a>
             </div>
           </li>
+          
           <li class="item" id="">
             <a href="#messages" class="menu-btn">
               <i class="fas fa-envelope"></i
@@ -131,7 +127,7 @@
           </li>
         </div>
       </div>
-      <!--sidebar end-->
+      <!--sidebar end -->
       <!--main container start-->
       <div class="main-container">
         <h1 class="main-header">Licenses</h1>
@@ -517,5 +513,29 @@
       <!--main container end-->
     </div>
     <!--wrapper end-->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      const dropdownToggle = document.querySelector('.dropdown-toggle');
+      const dropdownContent = document.querySelector('.dropdown-content');
+  
+      // 1. Event Listener:
+      dropdownToggle.addEventListener('click', function() {
+          // 2. Toggle 'active' class (for arrow rotation, but also useful as a state indicator)
+          this.classList.toggle('active');
+  
+          // 3. Conditional Logic for Showing/Hiding:
+          if (dropdownContent.style.maxHeight) {
+              // If dropdownContent.style.maxHeight has a value (meaning it's currently open)
+              dropdownContent.style.maxHeight = null; // Set it to null to collapse it
+              this.setAttribute('aria-expanded', 'false'); // Update accessibility attribute
+          } else {
+              // If dropdownContent.style.maxHeight is empty (meaning it's currently closed)
+              // Calculate the full height of the content, even if it's not visible
+              dropdownContent.style.maxHeight = dropdownContent.scrollHeight + 'px';
+              this.setAttribute('aria-expanded', 'true'); // Update accessibility attribute
+          }
+      });
+    });
+  </script>
   </body>
 </html>
