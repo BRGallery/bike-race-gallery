@@ -1,118 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sidebar Dropdown Menu</title>
     <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="flex overflow-x-hidden">
-    <div
-      class="h-18 flex w-full items-center justify-between bg-[#372a57] text-amber-500"
-    >
-      <div class="w-auto flex-none text-4xl font-semibold">
-        Bike Race Gallery
-      </div>
-      <ul class="flex w-40 flex-none justify-around text-2xl">
-        <li>
-          <button
-            class="text-md h-9 w-9 rounded-full border border-transparent bg-white text-center text-amber-500 hover:bg-gray-300"
-            type="button"
-          >
-            <i class="fas fa-search"></i>
-          </button>
-        </li>
-        <li>
-          <button
-            class="text-md h-9 w-9 rounded-full border border-transparent bg-white text-center text-amber-500 hover:bg-gray-300"
-            type="button"
-          >
-            <i class="fas fa-bell"></i>
-          </button>
-        </li>
-        <li>
-          <button
-            class="text-md h-9 w-9 rounded-full border border-transparent bg-white text-center text-amber-500 hover:bg-gray-300"
-            type="button"
-          >
-            <i class="fas fa-power-off"></i>
-          </button>
-        </li>
-      </ul>
-    </div>
-    <aside
-      class="justify- w-64 border-r-2 border-r-stone-800 bg-gray-800 p-5 text-gray-200"
-    >
-      <h2 class="mb-8 mt-0 text-center text-2xl font-semibold text-blue-400">
-        My App
-      </h2>
-      <nav>
-        <ul>
-          <li class="mb-2">
-            <a
-              href="#"
-              class="block rounded-lg p-3 font-medium text-gray-200 transition-colors duration-300 ease-in-out hover:bg-gray-700 hover:text-white"
-              >Dashboard</a
-            >
-          </li>
-          <li class="mb-2">
-            <a
-              href="#"
-              class="block rounded-lg p-3 font-medium text-gray-200 transition-colors duration-300 ease-in-out hover:bg-gray-700 hover:text-white"
-              >Profile</a
-            >
-          </li>
-          <li class="mb-2">
-            <input type="checkbox" id="toggleDropdown" class="peer hidden" />
-            <label
-              for="toggleDropdown"
-              class="block cursor-pointer rounded-lg p-3 font-medium text-gray-200 transition-colors duration-300 ease-in-out hover:bg-gray-700 hover:text-white peer-checked:mb-0 peer-checked:rounded-b-none peer-checked:bg-gray-700"
-            >
-              Dropdown Menu
-              <span class="rotate-180 transform duration-300"> &#9660; </span>
-            </label>
-            <div
-              class="max-h-0 overflow-hidden rounded-b-lg bg-green-600 shadow-md duration-500 peer-checked:mt-0 peer-checked:max-h-[200px]"
-            >
-              <a href="#" class="ml-8 block py-2 hover:bg-gray-100">Option A</a>
-              <a href="#" class="ml-8 block py-2 hover:bg-gray-100">Option C</a>
-              <a href="#" class="ml-8 block py-2 hover:bg-gray-100">Option B</a>
-            </div>
-          </li>
-          <li class="mb-2">
-            <a
-              href="#"
-              class="block rounded-lg p-3 font-medium text-gray-200 transition-colors duration-300 ease-in-out hover:bg-gray-700 hover:text-white"
-              >Help</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </aside>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const dropdownToggle = document.querySelector(".dropdown-toggle");
-        const dropdownContent = document.querySelector(".dropdown-content");
-
-        // Add click event listener to the dropdown toggle button
-        dropdownToggle.addEventListener("click", function () {
-          // Toggle the 'active' class on the button for arrow rotation
-          this.classList.toggle("active");
-
-          // Check if the dropdown content is currently visible (max-height is not 0)
-          if (dropdownContent.style.maxHeight) {
-            // If visible, hide it by setting max-height to 0
-            dropdownContent.style.maxHeight = null; // Reset to allow CSS to take over
-            this.setAttribute("aria-expanded", "false"); // Update ARIA attribute
-          } else {
-            // If hidden, show it by setting max-height to its scrollHeight
-            // scrollHeight gives the full height of the content, even if it's not currently visible
-            dropdownContent.style.maxHeight =
-              dropdownContent.scrollHeight + "px";
-            this.setAttribute("aria-expanded", "true"); // Update ARIA attribute
-          }
-        });
-      });
-    </script>
-  </body>
+    <style>
+        /* Custom styles for max-height transition, as Tailwind's max-h-0 and max-h-full don't allow dynamic scrollHeight */
+        .dropdown-content {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.4s ease-out;
+        }
+    </style>
+</head>
+<body class="font-inter m-0 p-0 bg-gray-300 flex min-h-screen overflow-x-hidden">
+    
+</body>
 </html>
