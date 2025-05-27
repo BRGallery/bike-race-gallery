@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sidebar Dropdown Menu</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom styles for max-height transition, as Tailwind's max-h-0 and max-h-full don't allow dynamic scrollHeight */
-        .dropdown-content {
-            overflow: hidden;
-            max-height: 0;
-            transition: max-height 0.4s ease-out;
-        }
-    </style>
 </head>
-<body class="font-inter m-0 p-0 bg-gray-300 flex min-h-screen overflow-x-hidden">
-    
+<body class="flex flex-col min-h-screen bg-gray-100">
+
+    <header class="bg-gray-900 text-white p-4 text-center shadow-md rounded-b-lg">
+        <h1 class="text-3xl font-semibold mb-2">My Tailwind Website</h1>
+    </header>
+
+    <div class="flex flex-1 gap-4">
+        <aside class="rounded-lg border-2 border-black md:w-64">
+        </aside>
+        <main class="flex-grow rounded-lg border-2 border-black">
+            
+        </main>
+    </div>
+
+    <footer class="bg-gray-900 text-white p-6 text-center shadow-md rounded-t-lg mt-auto">
+        <p class="text-sm">&copy; 2025 My Tailwind Website. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>

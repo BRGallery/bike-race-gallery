@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <title>Sidebar Dashboard Template With Sub Menu</title>
-    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
-      />
+    />
+    <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
+  <body class="flex flex-col min-h-screen">
     <!--header menu start-->
-    <div class="flex w-full h-18 items-center  justify-between bg-[#372a57] text-amber-500">
+    <header class="flex w-full h-18 items-center  justify-between bg-[#372a57] text-amber-500">
       <div class="w-auto flex-none text-4xl font-semibold">Bike Race Gallery</div>
       <ul class="flex w-40 flex-none justify-around text-2xl">
         <li>
@@ -40,88 +40,84 @@
           </button>
         </li>
       </ul>
-    </div>
+    </header>
     <!--header menu end-->
-    <!-- sidebar start-->
-    <aside class="bg-[#40355c] fixed  w-[250px] h-screen p-5 transition-all duration-300 overflow-y-auto">
-      <nav class="text-amber-500 text-xl">
-        <ul>
-          <li class="mb-2">
-            <a href="#home" class="block p-3 no-underline rounded-lg transition-colors duration-300 ease-in-out hover:bg-gray-700 hover:text-white font-medium">
-              <i class="fas fa-home"></i>
-              Home
-            </a>
-          </li>
-          <li class="mb-2">
-            <input type="checkbox" id="gallery-dropdown-toggle" class="hidden peer">
-            <label for="gallery-dropdown-toggle" class="cursor-pointer">
-              <i class="fas fa-image"></i>
-              Gallery
-              <i class="fas fa-chevron-down"></i>
-            </label>
-            <div class="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-[100px]">
-              <a href="#Licenses" class="ml-5 list-item">
+    <div class="mx-auto flex flex-1 flex-col md:flex-row  p-4 w-screen">
+      <aside class="bg-[#493d68] border-r-2 border-black w-full md:w-64 transition-all duration-300">
+        <nav class="text-amber-500 text-xl">
+          <ul>
+            <li class="mb-2">
+              <a href="#home" class="block p-3 no-underline rounded-lg transition-colors duration-300 ease-in-out hover:bg-gray-700 hover:text-white font-medium">
+                <i class="fas fa-home"></i>
+                Home
+              </a>
+            </li>
+            <li class="mb-2">
+              <a href="#home" class="block p-3 no-underline rounded-lg transition-colors duration-300 ease-in-out hover:bg-gray-700 hover:text-white font-medium">
+                <i class="fas fa-trophy"></i>
+                World Records
+              </a>
+            </li>
+            <li class="mb-2">
+              <input type="checkbox" id="gallery-dropdown-toggle" class="hidden peer">
+              <label for="gallery-dropdown-toggle" class="cursor-pointer">
                 <i class="fas fa-image"></i>
-                Licenses
+                Gallery
+                <i class="fas fa-chevron-down"></i>
+              </label>
+              <div class="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-[100px]">
+                <a href="#Licenses" class="block">
+                  <i class="fas fa-image"></i>
+                  Licenses
+                </a>
+                <a href="#Certificates" class="block">
+                  <i class="fas fa-address-card"></i>
+                  Certificates
+                </a>
+                <a href="#Challenges" class="block">
+                  <i class="fas fa-address-card"></i>
+                  Challenges (Coming Soon)
               </a>
-              <a href="#Certificates" class="list-item">
-                <i class="fas fa-address-card"></i>
-                Certificates
-              </a>
-              <a href="#Challenges" class="list-item">
-                <i class="fas fa-address-card"></i>
-                Challenges (Coming Soon)
-            </a>
-            </div>
-          </li>          
-          
-          <li class="mb-2">
-            <input type="checkbox" id="settings-dropdown-toggle" class="hidden peer">
-            <label for="settings-dropdown-toggle" class="cursor-pointer">
-              <i class="fas fa-cog"></i>
-              Settings
-              <i class="fas fa-chevron-down"></i>
-            </label>
-            <div class="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-[100px]">
-                        <!-- max-h-0 overflow-hidden ease-in-out transition-all duration-300 peer-checked:max-h-[500px] -->
-              <a href="#Language" class="block"
-                ><i class="fas fa-image"></i><span>Language</span></a>
-              <a href="#Password" class="block"
-                ><i class="fas fa-address-card"></i><span>Password</span></a>
               </div>
-          </li>
-          <li class="item">
-            <a href="#" class="menu-btn">
-              <i class="fas fa-info-circle"></i><span>About</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </aside>
+            </li>  
+            
+            <li class="mb-2">
+              <input type="checkbox" id="settings-dropdown-toggle" class="hidden peer">
+              <label for="settings-dropdown-toggle" class="cursor-pointer">
+                <i class="fas fa-cog"></i>
+                Settings
+                <i class="fas fa-chevron-down"></i>
+              </label>
+              <div class="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-[100px]">
+
+                <a href="#Language" class="block"
+                  ><i class="fas fa-image"></i>
+                  <span>Language</span>
+                </a>
+                <a href="#Password" class="block">
+                  <i class="fas fa-address-card"></i>
+                  <span>Password</span>
+                </a>
+                </div>
+            </li>
+            <li class="item">
+              <a href="#" class="menu-btn">
+                <i class="fas fa-info-circle"></i>
+                <span>About</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="flex flex-grow border-black border-8 p-4">
+        <div class="flex-grow border-blue-300 border-8"></div>
+      </main>
+    </div>
+    <!-- sidebar start-->
+    
     <!--sidebar end -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-      const dropdownToggle = document.querySelector('.dropdown-toggle');
-      const dropdownContent = document.querySelector('.dropdown-content');
-  
-      // 1. Event Listener:
-      dropdownToggle.addEventListener('click', function() {
-          // 2. Toggle 'active' class (for arrow rotation, but also useful as a state indicator)
-          this.classList.toggle('active');
-  
-          // 3. Conditional Logic for Showing/Hiding:
-          if (dropdownContent.style.maxHeight) {
-              // If dropdownContent.style.maxHeight has a value (meaning it's currently open)
-              dropdownContent.style.maxHeight = null; // Set it to null to collapse it
-              this.setAttribute('aria-expanded', 'false'); // Update accessibility attribute
-          } else {
-              // If dropdownContent.style.maxHeight is empty (meaning it's currently closed)
-              // Calculate the full height of the content, even if it's not visible
-              dropdownContent.style.maxHeight = dropdownContent.scrollHeight + 'px';
-              this.setAttribute('aria-expanded', 'true'); // Update accessibility attribute
-          }
-      });
-    });
-  </script>
+    <!--main start-->
+ 
+    <!--main end-->
   </body>
 </html>
