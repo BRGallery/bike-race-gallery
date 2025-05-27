@@ -3,27 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <title>Sidebar Dashboard Template With Sub Menu</title>
-    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
     />
+    <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
-      /* Custom styles for max-height transition, as Tailwind's max-h-0 and max-h-full don't allow dynamic scrollHeight */
-      .dropdown-content {
-          overflow: hidden;
-          max-height: 0;
-          transition: max-height 0.4s ease-out;
-      }
-  </style>
-
   </head>
-  <body>
-    <!--wrapper start-->
-    <div class="bg-violet-200 text-amber-500">
-      <!--header menu start-->
-    <div class="flex w-full h-18 items-center  justify-between bg-[#372a57] text-amber-500">
+  <body class="flex flex-col min-h-screen">
+    <!--header menu start-->
+    <header class="flex w-full h-18 items-center  justify-between bg-[#372a57] text-amber-500">
       <div class="w-auto flex-none text-4xl font-semibold">Bike Race Gallery</div>
       <ul class="flex w-40 flex-none justify-around text-2xl">
         <li>
@@ -51,491 +40,84 @@
           </button>
         </li>
       </ul>
-    </div>
+    </header>
     <!--header menu end-->
-    <!-- sidebar start-->
-    <aside class="w-64 border-r-stone-800 border-r-2 bg-gray-800 p-5 text-gray-200">
-      <div class="">
-        <li class="">
-          <a href="#" class="menu-btn">
-            <i class="fas fa-home"></i><span>Home</span>
-          </a>
-        </li>
-        <li class="list-item" id="profile">
-          <button type="button" class="flex items-center" aria-controls="gallery-dropdown" aria-hidden="gallery-dropdown">
-            <i class="fas fa-image"></i>
-            <span>Gallery</span>
-            <i class="fas fa-chevron-down drop-down"></i>
-          </a>
-          <ul id="gallery-dropdown" class="hidden">
-            <a href="#Licenses"
-              ><i class="fas fa-image"></i><span>Licenses</span></a>
-            <a href="#Certificates"
-              ><i class="fas fa-address-card"></i><span>Certificates</span></a>
-            <a href="#Challenges"><i class="fas fa-address-card"></i><span>Challenges (Coming Soon)</span></a>
-              </ul>
-        </li>
-        
-        
-        <li class="">
-          <button class="dropdown-toggle" aria-expanded="false">
-              Products
-              <span class="arrow"></span>
-          </button>
-          <div class="dropdown-content">
-              <a href="#" class="block">Category A</a>
-              <a href="#" class="block">Category B</a>
-              <a href="#" class="block">Category C</a>
-          </div>
-        </li>
-        
-        <li class="item" id="">
-          <a href="#messages" class="menu-btn">
-            <i class="fas fa-envelope"></i
-            ><span
-              >Messages <i class="fas fa-chevron-down drop-down"></i
-            ></span>
-          </a>
-          <div class="sub-menu">
-            <a href="#"><i class="fas fa-envelope"></i><span>New</span></a>
-            <a href="#"
-              ><i class="fas fa-envelope-square"></i><span>Sent</span></a
-            >
-            <a href="#"
-              ><i class="fas fa-exclamation-circle"></i><span>Spam</span></a
-            >
-          </div>
-        </li>
-        <li class="item" id="settings">
-          <a href="#settings" class="menu-btn">
-            <i class="fas fa-cog"></i
-            ><span
-              >Settings <i class="fas fa-chevron-down drop-down"></i
-            ></span>
-          </a>
-          <div class="sub-menu">
-            <a href="#"><i class="fas fa-lock"></i><span>Password</span></a>
-            <a href="#"
-              ><i class="fas fa-language"></i><span>Language</span></a
-            >
-          </div>
-        </li>
-        <li class="item">
-          <a href="#" class="menu-btn">
-            <i class="fas fa-info-circle"></i><span>About</span>
-          </a>
-        </li>
-      </div>
-    </aside>
-    <!--sidebar end -->
-    <!--main container start-->
-    <div class="main-container">
-      <h1 class="main-header">Licenses</h1>
-      <div class="button-section">
-        <ul>
-          <button class="bike-button">Normal</button>
-          <button class="bike-button">Acrobat</button>
-          <button class="bike-button">Ghost</button>
-          <button class="bike-button">Hog</button>
-          <button class="bike-button">Ultra</button>
-        </ul>
-        <ul>
-          <button class="bike-button">Agile Soul</button>
-          <button class="bike-button">Acrobat Hog</button>
-          <button class="bike-button">AWD</button>
-          <button class="bike-button">Thunder Phantom</button>
-          <button class="bike-button">Maniac</button>
-        </ul>
-      </div>
-      <div class="main-content">
-        <div class="card">
-          <h2 class="card-header">PRO</h2>
-          <div class="card-body1">
-            <h3 class="card-body-header">Pro 1</h3>
-            <table class="card-body-table">
-              <tr>
-                <th>Level</th>
-                <th>Sub</th>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-            </table>
-          </div>
-          <div class="card-body2">
-            <h3 class="card-body-header">Pro 2</h3>
-            <table class="card-body-table">
-              <tr>
-                <th>Level</th>
-                <th>Sub</th>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-            </table>
-          </div>
-          <div class="card-body3">
-            <h3 class="card-body-header">Pro 3</h3>
-            <table class="card-body-table">
-              <tr>
-                <th>Level</th>
-                <th>Sub</th>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        <div class="card">
-          <h2 class="card-header">ELITE</h2>
-          <div class="card-body1">
-            <h3 class="card-body-header">Elite 1</h3>
-            <table class="card-body-table">
-              <tr>
-                <th>Level</th>
-                <th>Sub</th>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-            </table>
-          </div>
-          <div class="card-body2">
-            <h3 class="card-body-header">Elite 2</h3>
-            <table class="card-body-table">
-              <tr>
-                <th>Level</th>
-                <th>Sub</th>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-            </table>
-          </div>
-          <div class="card-body3">
-            <h3 class="card-body-header">Elite 3</h3>
-            <table class="card-body-table">
-              <tr>
-                <th>Level</th>
-                <th>Sub</th>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        <div class="card">
-          <h2 class="card-header">MASTER</h2>
-          <div class="card-body1">
-            <h3 class="card-body-header">Master 1</h3>
-            <table class="card-body-table">
-              <tr>
-                <th>Level</th>
-                <th>Sub</th>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-            </table>
-          </div>
-          <div class="card-body2">
-            <h3 class="card-body-header">Master 2</h3>
-            <table class="card-body-table">
-              <tr>
-                <th>Level</th>
-                <th>Sub</th>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-            </table>
-          </div>
-          <div class="card-body3">
-            <h3 class="card-body-header">Master 3</h3>
-            <table class="card-body-table">
-              <tr>
-                <th>Level</th>
-                <th>Sub</th>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        <div class="card">
-          <h2 class="card-header">GRANDMASTER</h2>
-          <div class="card-body1">
-            <h3 class="card-body-header">Grandmaster 1</h3>
-            <table class="card-body-table">
-              <tr>
-                <th>Level</th>
-                <th>Sub</th>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-            </table>
-          </div>
-          <div class="card-body2">
-            <h3 class="card-body-header">Grandmaster 2</h3>
-            <table class="card-body-table">
-              <tr>
-                <th>Level</th>
-                <th>Sub</th>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-            </table>
-          </div>
-          <div class="card-body3">
-            <h3 class="card-body-header">Grandmaster 3</h3>
-            <table class="card-body-table">
-              <tr>
-                <th>Level</th>
-                <th>Sub</th>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-              <tr>
-                <td>~~~</td>
-                <td>0.000</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-      <!--main container end-->
+    <div class="mx-auto flex flex-1 flex-col md:flex-row  p-4 w-screen">
+      <aside class="bg-[#493d68] border-r-2 border-black w-full md:w-64 transition-all duration-300">
+        <nav class="text-amber-500 text-xl">
+          <ul>
+            <li class="mb-2">
+              <a href="#home" class="block p-3 no-underline rounded-lg transition-colors duration-300 ease-in-out hover:bg-gray-700 hover:text-white font-medium">
+                <i class="fas fa-home"></i>
+                Home
+              </a>
+            </li>
+            <li class="mb-2">
+              <a href="#home" class="block p-3 no-underline rounded-lg transition-colors duration-300 ease-in-out hover:bg-gray-700 hover:text-white font-medium">
+                <i class="fas fa-trophy"></i>
+                World Records
+              </a>
+            </li>
+            <li class="mb-2">
+              <input type="checkbox" id="gallery-dropdown-toggle" class="hidden peer">
+              <label for="gallery-dropdown-toggle" class="cursor-pointer">
+                <i class="fas fa-image"></i>
+                Gallery
+                <i class="fas fa-chevron-down"></i>
+              </label>
+              <div class="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-[100px]">
+                <a href="#Licenses" class="block">
+                  <i class="fas fa-image"></i>
+                  Licenses
+                </a>
+                <a href="#Certificates" class="block">
+                  <i class="fas fa-address-card"></i>
+                  Certificates
+                </a>
+                <a href="#Challenges" class="block">
+                  <i class="fas fa-address-card"></i>
+                  Challenges (Coming Soon)
+              </a>
+              </div>
+            </li>  
+            
+            <li class="mb-2">
+              <input type="checkbox" id="settings-dropdown-toggle" class="hidden peer">
+              <label for="settings-dropdown-toggle" class="cursor-pointer">
+                <i class="fas fa-cog"></i>
+                Settings
+                <i class="fas fa-chevron-down"></i>
+              </label>
+              <div class="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-[100px]">
 
-    <!--wrapper end-->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-      const dropdownToggle = document.querySelector('.dropdown-toggle');
-      const dropdownContent = document.querySelector('.dropdown-content');
-  
-      // 1. Event Listener:
-      dropdownToggle.addEventListener('click', function() {
-          // 2. Toggle 'active' class (for arrow rotation, but also useful as a state indicator)
-          this.classList.toggle('active');
-  
-          // 3. Conditional Logic for Showing/Hiding:
-          if (dropdownContent.style.maxHeight) {
-              // If dropdownContent.style.maxHeight has a value (meaning it's currently open)
-              dropdownContent.style.maxHeight = null; // Set it to null to collapse it
-              this.setAttribute('aria-expanded', 'false'); // Update accessibility attribute
-          } else {
-              // If dropdownContent.style.maxHeight is empty (meaning it's currently closed)
-              // Calculate the full height of the content, even if it's not visible
-              dropdownContent.style.maxHeight = dropdownContent.scrollHeight + 'px';
-              this.setAttribute('aria-expanded', 'true'); // Update accessibility attribute
-          }
-      });
-    });
-  </script>
+                <a href="#Language" class="block"
+                  ><i class="fas fa-image"></i>
+                  <span>Language</span>
+                </a>
+                <a href="#Password" class="block">
+                  <i class="fas fa-address-card"></i>
+                  <span>Password</span>
+                </a>
+                </div>
+            </li>
+            <li class="item">
+              <a href="#" class="menu-btn">
+                <i class="fas fa-info-circle"></i>
+                <span>About</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="flex flex-grow border-black border-8 p-4">
+        <div class="flex-grow border-blue-300 border-8"></div>
+      </main>
+    </div>
+    <!-- sidebar start-->
+    
+    <!--sidebar end -->
+    <!--main start-->
+ 
+    <!--main end-->
   </body>
 </html>
