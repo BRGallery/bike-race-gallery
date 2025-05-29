@@ -10,10 +10,14 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="flex flex-col min-h-screen">
+  <body class="flex min-h-screen flex-col">
     <!--header menu start-->
-    <header class="flex w-full h-18 items-center  justify-between bg-[#372a57] text-amber-500">
-      <div class="w-auto flex-none text-4xl font-semibold">Bike Race Gallery</div>
+    <header
+      class="h-18 flex w-full items-center justify-between bg-[#372a57] text-[#eba230]"
+    >
+      <div class="m-4 w-auto flex-none text-4xl font-extrabold">
+        Bike Race Gallery
+      </div>
       <ul class="flex w-40 flex-none justify-around text-2xl">
         <li>
           <button
@@ -42,82 +46,125 @@
       </ul>
     </header>
     <!--header menu end-->
-    <div class="mx-auto flex flex-1 flex-col md:flex-row  p-4 w-screen">
-      <aside class="bg-[#493d68] border-r-2 border-black w-full md:w-64 transition-all duration-300">
-        <nav class="text-amber-500 text-xl">
-          <ul>
-            <li class="mb-2">
-              <a href="#home" class="block p-3 no-underline rounded-lg transition-colors duration-300 ease-in-out hover:bg-gray-700 hover:text-white font-medium">
-                <i class="fas fa-home"></i>
-                Home
-              </a>
-            </li>
-            <li class="mb-2">
-              <a href="#home" class="block p-3 no-underline rounded-lg transition-colors duration-300 ease-in-out hover:bg-gray-700 hover:text-white font-medium">
-                <i class="fas fa-trophy"></i>
-                World Records
-              </a>
-            </li>
-            <li class="mb-2">
-              <input type="checkbox" id="gallery-dropdown-toggle" class="hidden peer">
-              <label for="gallery-dropdown-toggle" class="cursor-pointer">
-                <i class="fas fa-image"></i>
-                Gallery
-                <i class="fas fa-chevron-down"></i>
-              </label>
-              <div class="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-[100px]">
-                <a href="#Licenses" class="block">
-                  <i class="fas fa-image"></i>
-                  Licenses
-                </a>
-                <a href="#Certificates" class="block">
-                  <i class="fas fa-address-card"></i>
-                  Certificates
-                </a>
-                <a href="#Challenges" class="block">
-                  <i class="fas fa-address-card"></i>
-                  Challenges (Coming Soon)
-              </a>
-              </div>
-            </li>  
-            
-            <li class="mb-2">
-              <input type="checkbox" id="settings-dropdown-toggle" class="hidden peer">
-              <label for="settings-dropdown-toggle" class="cursor-pointer">
-                <i class="fas fa-cog"></i>
-                Settings
-                <i class="fas fa-chevron-down"></i>
-              </label>
-              <div class="max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-[100px]">
-
-                <a href="#Language" class="block"
-                  ><i class="fas fa-image"></i>
-                  <span>Language</span>
-                </a>
-                <a href="#Password" class="block">
-                  <i class="fas fa-address-card"></i>
-                  <span>Password</span>
-                </a>
-                </div>
-            </li>
-            <li class="item">
-              <a href="#" class="menu-btn">
-                <i class="fas fa-info-circle"></i>
-                <span>About</span>
-              </a>
-            </li>
+    <div class="mx-auto flex w-screen flex-1 flex-col md:flex-row">
+      <main
+        class="align-center flex flex-grow flex-col border-2 border-l-0 border-black bg-[#372a5740] p-8"
+      >
+        <h1 class="mb-4 self-center text-5xl font-bold">Licenses</h1>
+        <div class="flex flex-grow flex-col rounded-3xl border-3 border-black">
+          <ul
+            class="grid w-full grid-cols-5 grid-rows-2 justify-items-center self-start overflow-auto"
+          >
+            <button
+              class="flex h-10 w-full cursor-pointer items-center justify-center gap-2 border-b-2 font-bold"
+            >
+              <img
+                src="./resources/bikes/bike_regular.webp"
+                alt="Normal Bike"
+                class="h-8"
+              />
+              <span class="hidden md:block">Normal</span>
+            </button>
+            <button
+              class="flex h-10 w-full cursor-pointer items-center justify-center gap-2 border-b-2 border-l-2 font-bold"
+            >
+              <img
+                src="./resources/bikes/bike_acrobatic.webp"
+                alt="Acrobatic Bike"
+                class="h-8"
+              />
+              <span class="hidden md:block">Acro</span>
+            </button>
+            <button
+              class="flex h-10 w-full cursor-pointer items-center justify-center gap-2 border-b-2 border-l-2 font-bold"
+            >
+              <img
+                src="./resources/bikes/bike_ghost.webp"
+                alt="Ghost Bike"
+                class="h-8"
+              />
+              <span class="hidden md:block">Ghost</span>
+            </button>
+            <button
+              class="flex h-10 w-full cursor-pointer items-center justify-center gap-2 border-b-2 border-l-2 font-bold"
+            >
+              <img
+                src="./resources/bikes/bike_hog.webp"
+                alt="Hog Bike"
+                class="h-8"
+              />
+              <span class="hidden md:block">Hog</span>
+            </button>
+            <button
+              class="flex h-10 w-full cursor-pointer items-center justify-center gap-2 border-b-2 border-l-2 font-bold"
+            >
+              <img
+                src="./resources/bikes/bike_ultra.webp"
+                alt="Ultra Bike"
+                class="h-8"
+              />
+              <span class="hidden md:block">Ultra</span>
+            </button>
+            <button
+              class="flex h-10 w-full cursor-pointer items-center justify-center gap-2 border-b-3 font-bold"
+            >
+              <img
+                src="./resources/bikes/loja_srare_acro_ghost_re.webp"
+                alt="Agile Soul Bike"
+                class="h-8"
+              />
+              <span class="hidden md:block">Agile Soul</span>
+            </button>
+            <button
+              class="flex h-10 w-full cursor-pointer items-center justify-center gap-2 border-b-3 border-l-2 font-bold"
+            >
+              <img
+                src="./resources/bikes/loja_rare_acro_hog.webp"
+                alt="Acrobatic Hog Bike"
+                class="h-8"
+              />
+              <span class="hidden md:block">Acrobatic Hog</span>
+            </button>
+            <button
+              class="flex h-10 w-full cursor-pointer items-center justify-center gap-2 border-b-3 border-l-2 font-bold"
+            >
+              <img
+                src="./resources/bikes/loja_legendary_acro_ghost_super_re.webp"
+                alt="Thunder Phantom Bike"
+                class="h-8"
+              />
+              <span class="hidden md:block">Thunder Phantom</span>
+            </button>
+            <button
+              class="flex h-10 w-full cursor-pointer items-center justify-center gap-2 border-b-3 border-l-2 font-bold"
+            >
+              <img
+                src="./resources/bikes/loja_uncommon_mista.webp"
+                alt="AWD Bike"
+                class="h-8"
+              />
+              <span class="hidden md:block">AWD</span>
+            </button>
+            <button
+              class="flex h-10 w-full cursor-pointer items-center justify-center gap-2 border-b-3 border-l-2 font-bold"
+            >
+              <img
+                src="./resources/bikes/loja_legendary_acro_unbrk_re_hog.webp"
+                alt="Maniac Bike"
+                class="h-8"
+              />
+              <span class="hidden md:block">Maniac</span>
+            </button>
           </ul>
-        </nav>
-      </aside>
-      <main class="flex flex-grow border-black border-8 p-4">
-        <div class="flex-grow border-blue-300 border-8"></div>
+          <div class="flex-grow"></div>
+        </div>
       </main>
     </div>
     <!-- sidebar start-->
-    
+
     <!--sidebar end -->
     <!--main start-->
- 
+
     <!--main end-->
   </body>
 </html>
