@@ -9,6 +9,7 @@
     />
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="main.js"></script>
   </head>
   <body class="flex min-h-screen flex-col">
     <!--header menu start-->
@@ -53,9 +54,11 @@
         <span class="mb-4 self-center text-5xl font-bold">Licenses</span>
         <div class="border-3 flex flex-grow flex-col rounded-3xl border-black">
           <ul
+            id="bikeSelectors"
             class="grid w-full grid-cols-5 grid-rows-2 justify-items-center self-start overflow-auto"
           >
             <button
+              data-bike-name="normal"
               class="flex h-10 w-full cursor-pointer items-center justify-center gap-2 border-b-2 font-bold"
             >
               <img
@@ -66,6 +69,7 @@
               <span class="hidden md:block">Normal</span>
             </button>
             <button
+              data-bike-name="acro"
               class="flex h-10 w-full cursor-pointer items-center justify-center gap-2 border-b-2 border-l-2 font-bold"
             >
               <img
@@ -76,6 +80,7 @@
               <span class="hidden md:block">Acro</span>
             </button>
             <button
+              data-bike-name="ghost"
               class="flex h-10 w-full cursor-pointer items-center justify-center gap-2 border-b-2 border-l-2 font-bold"
             >
               <img
@@ -86,6 +91,7 @@
               <span class="hidden md:block">Ghost</span>
             </button>
             <button
+              data-bike-name="hog"
               class="flex h-10 w-full cursor-pointer items-center justify-center gap-2 border-b-2 border-l-2 font-bold"
             >
               <img
@@ -96,6 +102,7 @@
               <span class="hidden md:block">Hog</span>
             </button>
             <button
+              data-bike-name="ultra"
               class="flex h-10 w-full cursor-pointer items-center justify-center gap-2 border-b-2 border-l-2 font-bold"
             >
               <img
@@ -106,6 +113,7 @@
               <span class="hidden md:block">Ultra</span>
             </button>
             <button
+              data-bike-name="aSoul"
               class="border-b-3 flex h-10 w-full cursor-pointer items-center justify-center gap-2 font-bold"
             >
               <img
@@ -116,6 +124,7 @@
               <span class="hidden md:block">Agile Soul</span>
             </button>
             <button
+              data-bike-name="aHog"
               class="border-b-3 flex h-10 w-full cursor-pointer items-center justify-center gap-2 border-l-2 font-bold"
             >
               <img
@@ -126,6 +135,7 @@
               <span class="hidden md:block">Acrobatic Hog</span>
             </button>
             <button
+              data-bike-name="tPhantom"
               class="border-b-3 flex h-10 w-full cursor-pointer items-center justify-center gap-2 border-l-2 font-bold"
             >
               <img
@@ -136,6 +146,7 @@
               <span class="hidden md:block">Thunder Phantom</span>
             </button>
             <button
+              data-bike-name="awd"
               class="border-b-3 flex h-10 w-full cursor-pointer items-center justify-center gap-2 border-l-2 font-bold"
             >
               <img
@@ -146,6 +157,7 @@
               <span class="hidden md:block">AWD</span>
             </button>
             <button
+              data-bike-name="maniac"
               class="border-b-3 flex h-10 w-full cursor-pointer items-center justify-center gap-2 border-l-2 font-bold"
             >
               <img
@@ -157,17 +169,18 @@
             </button>
           </ul>
           <div
-            class="flex flex-grow flex-col justify-between space-y-3 px-3 md:flex-row md:space-x-3 md:space-y-0 lg:flex-row"
+            id="licenseTables"
+            class="flex flex-grow flex-col justify-around space-y-3 px-3 md:flex-row md:space-x-3 md:space-y-0 lg:flex-row"
           >
             <div
               class="my-3 grid w-full rounded-2xl border-2 md:w-1/2 lg:w-[25%]"
             >
               <span class="justify-self-center text-2xl font-semibold"
-                >GRANDMASTER</span
+                >PRO</span
               >
               <div class="flex flex-col">
                 <span class="self-center text-lg font-semibold"
-                  >Grandmaster 1</span
+                  >Pro 1</span
                 >
                 <table class="table-fixed w-full">
                   <thead>
@@ -176,33 +189,12 @@
                       <th>Time</th>
                     </tr>
                   </thead>
-                  <tbody class="text-center">
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                  </tbody>
+                  <tbody data-license-name="pro1" class="text-center"></tbody>
                 </table>
               </div>
               <div class="flex flex-col">
                 <span class="self-center text-lg font-semibold"
-                  >Grandmaster 2</span
+                  >Pro 2</span
                 >
                 <table class="table-fixed w-full">
                   <thead>
@@ -211,33 +203,12 @@
                       <th>Time</th>
                     </tr>
                   </thead>
-                  <tbody class="text-center">
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                  </tbody>
+                  <tbody data-license-name="pro2" class="text-center"></tbody>
                 </table>
               </div>
               <div class="flex flex-col">
                 <span class="self-center text-lg font-semibold"
-                  >Grandmaster 3</span
+                  >Pro 3</span
                 >
                 <table class="table-fixed w-full">
                   <thead>
@@ -246,28 +217,7 @@
                       <th>Time</th>
                     </tr>
                   </thead>
-                  <tbody class="text-center">
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                  </tbody>
+                  <tbody data-license-name="pro3" class="text-center"></tbody>
                 </table>
               </div>
             </div>
@@ -275,11 +225,11 @@
               class="my-3 grid w-full rounded-2xl border-2 md:w-1/2 lg:w-[25%]"
             >
               <span class="justify-self-center text-2xl font-semibold"
-                >GRANDMASTER</span
+                >ELITE</span
               >
               <div class="flex flex-col">
                 <span class="self-center text-lg font-semibold"
-                  >Grandmaster 1</span
+                  >Elite 1</span
                 >
                 <table class="table-fixed w-full">
                   <thead>
@@ -288,33 +238,12 @@
                       <th>Time</th>
                     </tr>
                   </thead>
-                  <tbody class="text-center">
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                  </tbody>
+                  <tbody data-license-name="elite1" class="text-center"></tbody>
                 </table>
               </div>
               <div class="flex flex-col">
                 <span class="self-center text-lg font-semibold"
-                  >Grandmaster 2</span
+                  >Elite 2</span
                 >
                 <table class="table-fixed w-full">
                   <thead>
@@ -323,33 +252,12 @@
                       <th>Time</th>
                     </tr>
                   </thead>
-                  <tbody class="text-center">
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                  </tbody>
+                  <tbody data-license-name="elite2" class="text-center"></tbody>
                 </table>
               </div>
               <div class="flex flex-col">
                 <span class="self-center text-lg font-semibold"
-                  >Grandmaster 3</span
+                  >Elite 3</span
                 >
                 <table class="table-fixed w-full">
                   <thead>
@@ -358,252 +266,7 @@
                       <th>Time</th>
                     </tr>
                   </thead>
-                  <tbody class="text-center">
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div
-              class="my-3 grid w-full rounded-2xl border-2 md:w-1/2 lg:w-[25%]"
-            >
-              <span class="justify-self-center text-2xl font-semibold"
-                >GRANDMASTER</span
-              >
-              <div class="flex flex-col">
-                <span class="self-center text-lg font-semibold"
-                  >Grandmaster 1</span
-                >
-                <table class="table-fixed w-full">
-                  <thead>
-                    <tr>
-                      <th>Level</th>
-                      <th>Time</th>
-                    </tr>
-                  </thead>
-                  <tbody class="text-center">
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="flex flex-col">
-                <span class="self-center text-lg font-semibold"
-                  >Grandmaster 2</span
-                >
-                <table class="table-fixed w-full">
-                  <thead>
-                    <tr>
-                      <th>Level</th>
-                      <th>Time</th>
-                    </tr>
-                  </thead>
-                  <tbody class="text-center">
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="flex flex-col">
-                <span class="self-center text-lg font-semibold"
-                  >Grandmaster 3</span
-                >
-                <table class="table-fixed w-full">
-                  <thead>
-                    <tr>
-                      <th>Level</th>
-                      <th>Time</th>
-                    </tr>
-                  </thead>
-                  <tbody class="text-center">
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div
-              class="my-3 grid w-full rounded-2xl border-2 md:w-1/2 lg:w-[25%]"
-            >
-              <span class="justify-self-center text-2xl font-semibold"
-                >GRANDMASTER</span
-              >
-              <div class="flex flex-col">
-                <span class="self-center text-lg font-semibold"
-                  >Grandmaster 1</span
-                >
-                <table class="table-fixed w-full">
-                  <thead>
-                    <tr>
-                      <th>Level</th>
-                      <th>Time</th>
-                    </tr>
-                  </thead>
-                  <tbody class="text-center">
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="flex flex-col">
-                <span class="self-center text-lg font-semibold"
-                  >Grandmaster 2</span
-                >
-                <table class="table-fixed w-full">
-                  <thead>
-                    <tr>
-                      <th>Level</th>
-                      <th>Time</th>
-                    </tr>
-                  </thead>
-                  <tbody class="text-center">
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="flex flex-col">
-                <span class="self-center text-lg font-semibold"
-                  >Grandmaster 3</span
-                >
-                <table class="table-fixed w-full">
-                  <thead>
-                    <tr>
-                      <th>Level</th>
-                      <th>Time</th>
-                    </tr>
-                  </thead>
-                  <tbody class="text-center">
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                    <tr>
-                      <td>Thanksgiving 2-8</td>
-                      <td>0.000</td>
-                    </tr>
-                  </tbody>
+                  <tbody data-license-name="elite3" class="text-center"></tbody>
                 </table>
               </div>
             </div>
