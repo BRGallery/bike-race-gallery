@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en" dir="ltr">
   <head>
+    <meta <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <title>Sidebar Dashboard Template With Time Menu</title>
     <link
@@ -16,7 +17,7 @@
     <header
       class="h-18 flex w-full items-center justify-between bg-[#372a57] text-[#eba230]"
     >
-      <div class="m-4 w-auto flex-none text-4xl font-extrabold">
+      <div class="m-4 w-auto flex-none text-2xl lg:text-4xl font-extrabold">
         Bike Race Gallery
       </div>
       <ul class="flex w-40 flex-none justify-around text-2xl">
@@ -49,10 +50,10 @@
     <!--header menu end-->
     <div class="mx-auto flex w-screen flex-1 flex-col md:flex-row">
       <main
-        class="align-center flex flex-grow flex-col border-2 border-l-0 border-black bg-[#372a5740] p-8"
+        class="align-center flex flex-grow flex-col border-2 border-l-0 border-black bg-[#372a5740] p-4"
       >
         <span class="mb-4 self-center text-5xl font-bold">Licenses</span>
-        <div class="border-3 flex flex-grow flex-col rounded-3xl border-black">
+        <div class="border-3 flex flex-grow flex-col rounded-3xl overflow-hidden border-black">
           <ul
             id="bikeSelectors"
             class="grid w-full grid-cols-5 grid-rows-2 justify-items-center self-start overflow-auto"
@@ -170,12 +171,12 @@
           </ul>
           <div
             id="licenseTables"
-            class="flex flex-grow flex-col justify-around space-y-3 px-3 md:flex-row md:space-x-3 md:space-y-0 lg:flex-row"
+            class="flex flex-col flex-grow h-96 overflow-y-auto justify-around space-y-3 px-3 md:flex-row md:space-x-3 md:space-y-0 lg:flex-row"
           >
             <div
               class="my-3 grid w-full rounded-2xl border-2 md:w-1/2 lg:w-[25%]"
             >
-              <span class="justify-self-center text-2xl font-semibold"
+              <span class="justify-self-center text-2xl font-semibold bg-"
                 >PRO</span
               >
               <div class="flex flex-col">
