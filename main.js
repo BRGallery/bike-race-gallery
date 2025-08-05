@@ -42,13 +42,30 @@ document.addEventListener("DOMContentLoaded", async function () {
   const bikeButtons = bikeSelectors.querySelectorAll("button");
   const tables = licenseTables.querySelectorAll("tbody");
 
-  bikeButtons.forEach(function (bikeButton) {
-    let bikeName = bikeButton.dataset.bikeName;
+  // bikeButtons.forEach(function (bikeButton) {
+  //   let bikeName = bikeButton.dataset.bikeName;
 
-    bikeButton.addEventListener("click", function () {
-      updateLicenseTables(bikeName);
+  //   bikeButton.addEventListener("click", function () {
+  //     updateLicenseTables(bikeName);
+  //   });
+  // });
+
+  bikeButtons.forEach(function (bikeButton) {
+  let bikeName = bikeButton.dataset.bikeName;
+
+  bikeButton.addEventListener("click", function () {
+    // Set all buttons to inactive
+    bikeButtons.forEach(function (btn) {
+      btn.dataset.active = "false";
     });
+
+    // Set the clicked button to active
+    bikeButton.dataset.active = "true";
+
+    // Update the tables
+    updateLicenseTables(bikeName);
   });
+});
 
   updateLicenseTables("normal");
 });
