@@ -56,6 +56,13 @@ document.addEventListener("DOMContentLoaded", async function () {
   bikeButton.addEventListener("click", function () {
     // Set all buttons to inactive
     bikeButtons.forEach(function (btn) {
+
+      btn.classList.remove("bg-red-300");
+    });
+
+    // Step 2: Add the active class to the clicked button
+    bikeButton.classList.add("bg-red-300");
+
       btn.dataset.active = "false";
     });
 
